@@ -1,0 +1,61 @@
+<div class="max-w-4xl mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-6">🎬 My Movies</h1>
+
+  <!-- Add Movie Form -->
+  <div class="bg-gray-100 rounded-lg p-6 mb-8">
+    <h2 class="text-xl font-semibold mb-4">Add a Movie</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <input
+        [(ngModel)]="newMovie.title"
+        placeholder="Title"
+        class="border rounded px-3 py-2"
+      />
+      <input
+        [(ngModel)]="newMovie.genre"
+        placeholder="Genre"
+        class="border rounded px-3 py-2"
+      />
+      <input
+        [(ngModel)]="newMovie.year"
+        type="number"
+        placeholder="Year"
+        class="border rounded px-3 py-2"
+      />
+      <input
+        [(ngModel)]="newMovie.rating"
+        type="number"
+        step="0.1"
+        placeholder="Rating"
+        class="border rounded px-3 py-2"
+      />
+    </div>
+    <button
+      (click)="addMovie()"
+      class="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+    >
+      Add Movie
+    </button>
+  </div>
+
+  <!-- Movie List -->
+  <div class="space-y-3">
+    @for (movie of movies; track movie.id) {
+      <div class="flex items-center justify-between bg-white border rounded-lg p-4 shadow-sm">
+        <div>
+          <span class="font-semibold text-lg">{{ movie.title }}</span>
+          <span class="text-gray-500 ml-2">({{ movie.year }})</span>
+          <span class="ml-3 bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">{{ movie.genre }}</span>
+          <span class="ml-3 text-yellow-500">⭐ {{ movie.rating }}</span>
+        </div>
+        <button
+          (click)="deleteMovie(movie.id)"
+          class="text-red-500 hover:text-red-700 font-bold"
+        >
+          ✕
+        </button>
+      </div>
+    } @empty {
+      <p class="text-gray-500 text-center py-8">No movies yet. Add your first one above!</p>
+    }
+  </div>
+</div>
