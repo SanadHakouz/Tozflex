@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════
+# .NET / C# — Backend
+# ═══════════════════════════════════════
+
+# Build output — NEVER commit these
+bin/
+obj/
+
+# Secrets & sensitive config — NEVER commit these
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+secrets.json
+
+# Visual Studio artifacts
+.vs/
+*.user
+*.suo
+.idea/
+
+# NuGet
+packages/
+*.nupkg
+
+# ═══════════════════════════════════════
+# Angular — Frontend
+# ═══════════════════════════════════════
+
+# Dependencies — restored via npm install
+node_modules/
+
+# Angular build output
+dist/
+.angular/
+
+# Environment files
+.env
+.env.*
+
+# ═══════════════════════════════════════
+# Project-specific — Keep Private
+# ═══════════════════════════════════════
+
+# AI assistant context files
+CLAUDE.md
+.claude/
+
+# Developer study notes and docs
+docs/
+
+# ═══════════════════════════════════════
+# General
+# ═══════════════════════════════════════
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Storage / uploads
+storage/
+uploads/
+wwwroot/uploads/
